@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Events Portal Registration/Login</title>
+</head>
+<body class="auth-page">
+    <header class="auth-hero">
+        <div class="auth-hero-inner">
+            <img src = "kec.jpg" alt="College Logo" width="30%" height="150px">
+            <div>
+                <p class="auth-kicker">College Portal</p>
+                <h1>Registration / Login</h1>
+                <p class="auth-subtitle">Secure access to student services and updates.</p>
+            </div>
+        </div>
+    </header>
+    <main class="auth-shell">
+        <form class="auth-card" action="/register" method="post">
+            <h2>Create Account</h2>
+            <p class="auth-card-note">Use your institutional email to register.</p>
+            <label for="reg-username">Email</label>
+            <input type="email" id="reg-username" name="email" required>
+            <label for="reg-password">Password</label>
+            <input type="password" id="reg-password" name="password" required>
+            <button type="submit">Register</button>
+        </form>
+        <form class="auth-card" action="/login" method="post">
+            <h2>Welcome Back</h2>
+            <p class="auth-card-note">Sign in to continue to your dashboard.</p>
+            <label for="login-username">Email</label>
+            <input type="email" id="login-username" name="email" required>
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </main>
+</body>
+</html>
