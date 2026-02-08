@@ -1,7 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ravi Varma Creative Club Events - Kongu Engineering College</title>
     <style>
@@ -183,18 +186,75 @@
             background-color: #ffcc00;
             transform: translateY(-3px);
         }
-    </style>
+            .success-btn {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .success-btn:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        .leave-btn {
+            display: inline-block;
+            background-color: #dc3545;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-left: 10px;
+        }
+
+        .leave-btn:hover {
+            background-color: #c82333;
+            transform: translateY(-2px);
+        }    </style>
 </head>
 <body>
     <div class="header">
-        <button class="back-btn" onclick="window.history.back()">← Back to Clubs</button>
+        <button class="back-btn" onclick="window.history.back()">&larr; Back to Clubs</button>
         <h1>Kongu Engineering College</h1>
         <p>Clubs Events Portal</p>
     </div>
-    
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="ravi-1.jpg" alt="Ravi Varma Club Event 1" class="d-block w-100" height="400px" width ="25%">
+            </div>
+            <div class="carousel-item">
+                <img src="ravi-2.jpg" alt="Ravi Varma Club Event 2" class="d-block w-100" height = "400px" width ="25%">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
     <div class="club-header">
         <h1 class="club-title">Ravi Varma Creative Club</h1>
-        <p class="club-description">The Ravi Varma Creative Club of Kongu Engineering College nurtures artistic talents and encourages creative expression among students. The club provides a platform for students to explore and showcase their skills in drawing, painting, design, and other visual arts. Through various activities conducted throughout the year—including art competitions, workshops, exhibitions, and cultural events—the club inspires creativity, enhances artistic skills, and promotes appreciation for art and culture on campus.</p>
+        <p class="club-description">The Ravi Varma Creative Club of Kongu Engineering College nurtures artistic talents and encourages creative expression among students. The club provides a platform for students to explore and showcase their skills in drawing, painting, design, and other visual arts. Through various activities conducted throughout the year including art competitions, workshops, exhibitions, and cultural eventsthe club inspires creativity, enhances artistic skills, and promotes appreciation for art and culture on campus.</p>
     </div>
 
     <div class="club-info">
@@ -203,26 +263,23 @@
             <div class="info-grid">
                 <div class="info-item">
                     <h4>Faculty Coordinator</h4>
-                    <p>Dr. R. Kumar - 9867538XXX</p>
-                    <p>Department of English </p>
-                    <p>Email: rkumar.eng@kongu.edu</p>
+                    <p>Dr. V. Priya - 9876541XXX</p>
+                    <p>Department of Arts</p>
+                    <p>Email: vpriya.arts@kongu.edu</p>
                 </div>
                 
                 <div class="info-item">
                     <h4>Student Coordinator</h4>
-                    <p>Arjun Sharma (President) - 9087543XXX</p>
-                    <p>Computer Science and Engineering</p>
-                    <p>Email: arjunsharma.23cse@kongu.edu</p>
+                    <p>Arun B (President) - 9087142XXX</p>
+                    <p>Civil Engineering</p>
+                    <p>Email: arunb.23ce@kongu.edu</p>
                 </div>
                 <div class = "info-item">
                     <h4>Student Coordinator</h4>
-                    <p>Priya Patel (Secretary) - 6789345XXX</p>
-                    <p>Electronics and Communication Engineering</p>
-                    <p>priyapatel.23ece@kongu.edu</p>
+                    <p>Kavya R (Secretary) - 6789343XXX</p>
+                    <p>Electrical and Electronics Engineering</p>
+                    <p>kavyar.23eee@kongu.edu</p>
                 </div>
-               
-                
-               
             </div>
         </div>
     
@@ -231,38 +288,38 @@
         
         <div class="events-grid">
             <div class="event-card">
-                <h3 class="event-title">College Band Competition 2026</h3>
-                <div class="event-date">October 15, 2026 | 4:00 PM - 8:00 PM</div>
-                <p class="event-description">Annual inter-department band competition showcasing the best musical talents of KEC. Open to all students with bands.</p>
+                <h3 class="event-title">Watercolor Landscapes Workshop</h3>
+                <div class="event-date">March 27, 2026 | 2:00 PM - 5:30 PM</div>
+                <p class="event-description">Learn washes, gradients, and composition for scenic paintings.</p>
                 <div class="event-details">
-                    <p><strong>Venue:</strong> Open Air Auditorium</p>
-                    <p><strong>Registration Fee:</strong> ₹500 per team</p>
-                    <p><strong>Last Date to Register:</strong> October 10, 2026</p>
-                    <p><strong>Contact:</strong> Prof. R. Kumar (9876543210)</p>
+                    <p><strong>Venue:</strong> Art Studio 1</p>
+                    <p><strong>Materials:</strong> Provided</p>
+                    <button class="success-btn register-btn" type="button">Register Now</button>
+<button class="leave-btn" type="button">Leave</button>
                 </div>
             </div>
             
             <div class="event-card">
-                <h3 class="event-title">Western Music Workshop</h3>
-                <div class="event-date">October 28, 2026 | 10:00 AM - 4:00 PM</div>
-                <p class="event-description">Learn guitar, keyboard, and drums from professional musicians. Suitable for beginners and intermediate players.</p>
+                <h3 class="event-title">Pencil Sketching Clinic</h3>
+                <div class="event-date">April 16, 2026 | 4:00 PM - 6:00 PM</div>
+                <p class="event-description">Techniques on shading, proportions, and realistic portrait sketches.</p>
                 <div class="event-details">
-                    <p><strong>Venue:</strong> Music Room, Cultural Block</p>
-                    <p><strong>Registration Fee:</strong> ₹200 (includes lunch)</p>
-                    <p><strong>Instruments Provided:</strong> Yes</p>
-                    <p><strong>Contact:</strong> Music Club Secretary</p>
+                    <p><strong>Venue:</strong> Drawing Hall</p>
+                    <p><strong>Seats:</strong> 50</p>
+                    <button class="success-btn register-btn" type="button">Register Now</button>
+<button class="leave-btn" type="button">Leave</button>
                 </div>
             </div>
             
             <div class="event-card">
-                <h3 class="event-title">Annual Music Festival</h3>
-                <div class="event-date">November 20, 2026 | 6:00 PM - 10:00 PM</div>
-                <p class="event-description">The grand annual music festival featuring performances by college bands, solo artists, and guest performances.</p>
+                <h3 class="event-title">On-the-Spot Art Contest</h3>
+                <div class="event-date">May 8, 2026 | 9:30 AM - 1:00 PM</div>
+                <p class="event-description">Timed art contest based on a surprise theme with prizes for top entries.</p>
                 <div class="event-details">
-                    <p><strong>Venue:</strong> Main Auditorium</p>
-                    <p><strong>Entry:</strong> Free for all students</p>
-                    <p><strong>Guest Performance:</strong> Local Band "The Echoes"</p>
-                    <p><strong>Contact:</strong> Cultural Coordinator</p>
+                    <p><strong>Venue:</strong> Open Air Stage</p>
+                    <p><strong>Entry:</strong> Rs. 50</p>
+                    <button class="success-btn register-btn" type="button">Register Now</button>
+<button class="leave-btn" type="button">Leave</button>
                 </div>
             </div>
         </div>
@@ -271,15 +328,15 @@
         
         <div class="events-grid">
             <div class="event-card">
-                <h3 class="event-title">Freshers' Welcome Jam</h3>
-                <div class="event-date">August 10, 2026 | 5:00 PM - 7:00 PM</div>
-                <p class="event-description">Informal music session to welcome first year students and introduce them to the music club activities.</p>
+                <h3 class="event-title">Annual Art Exhibition</h3>
+                <div class="event-date">December 2, 2025 | 10:00 AM - 5:00 PM</div>
+                <p class="event-description">Displayed paintings and sketches by club members and alumni.</p>
             </div>
             
             <div class="event-card">
-                <h3 class="event-title">Karaoke Night</h3>
-                <div class="event-date">September 5, 2026 | 6:00 PM - 9:00 PM</div>
-                <p class="event-description">Fun karaoke session where students showcased their singing talents in a non-competitive environment.</p>
+                <h3 class="event-title">Mural Collaboration Day</h3>
+                <div class="event-date">January 30, 2026 | 3:00 PM - 6:00 PM</div>
+                <p class="event-description">Team-based mural artwork created for the student center wall.</p>
             </div>
         </div>
         
@@ -290,5 +347,40 @@
         <p>Kongu Engineering College | Perundurai, Erode - 638060, Tamil Nadu</p>
         <p class="copyright">© 2026 Kongu Clubs Events Portal</p>
     </div>
-</body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.register-btn').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const card = btn.closest('.event-details');
+                    if (!card) return;
+                    btn.textContent = 'Registered';
+                    btn.disabled = true;
+                    btn.classList.add('registered');
+                    const leave = card.querySelector('.leave-btn');
+                    if (leave) { /* visible by default */ }
+                });
+            });
+
+            document.querySelectorAll('.leave-btn').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const card = btn.closest('.event-details');
+                    if (!card) return;
+                    const reg = card.querySelector('.register-btn');
+                    if (reg) {
+                        reg.textContent = 'Register Now';
+                        reg.disabled = false;
+                        reg.classList.remove('registered');
+                    }
+                    /* leave stays visible */
+                });
+            });
+        });
+    </script></body>
 </html>
+
+
+
+
+
+
+

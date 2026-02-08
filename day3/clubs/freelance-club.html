@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -307,11 +307,46 @@
                 grid-template-columns: 1fr;
             }
         }
-    </style>
+            .success-btn {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .success-btn:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        .leave-btn {
+            display: inline-block;
+            background-color: #dc3545;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-left: 10px;
+        }
+
+        .leave-btn:hover {
+            background-color: #c82333;
+            transform: translateY(-2px);
+        }    </style>
 </head>
 <body>
     <div class="header">
-        <button class="back-btn" onclick="window.history.back()">← Back to Clubs</button>
+        <button class="back-btn" onclick="window.history.back()">&larr; Back to Clubs</button>
         <img src = "../kec.jpg" width = "50%" height ="250px">
     </div>
    <div id="demo" class="carousel slide" data-bs-ride="carousel">
@@ -383,9 +418,11 @@
                 <p class="event-description">Comprehensive workshop covering freelancing basics, platform registration, client communication, pricing strategies, and portfolio building. Ideal for beginners.</p>
                 <div class="event-details">
                     <p><strong>Venue:</strong> Seminar Hall, CSE Block</p>
-                    <p><strong>Registration Fee:</strong> ₹100 (includes materials)</p>
+                    <p><strong>Registration Fee:</strong> Rs 100 (includes materials)</p>
                     <p><strong>Last Date to Register:</strong> October 15, 2026</p>
                     <p><strong>Contact:</strong> Dr. S. Meenakshi (9876543210)</p>
+                    <button class="success-btn register-btn" type="button">Register Now</button>
+<button class="leave-btn" type="button">Leave</button>
                 </div>
             </div>
             
@@ -398,6 +435,8 @@
                     <p><strong>Guest Speakers:</strong> 3 Industry Experts</p>
                     <p><strong>Registration:</strong> Free for club members</p>
                     <p><strong>Contact:</strong> Free Lance Club Secretary</p>
+                    <button class="success-btn register-btn" type="button">Register Now</button>
+<button class="leave-btn" type="button">Leave</button>
                 </div>
             </div>
             
@@ -407,9 +446,11 @@
                 <p class="event-description">Intensive 6-day bootcamp focusing on front-end and back-end development skills essential for freelancing in web development.</p>
                 <div class="event-details">
                     <p><strong>Venue:</strong> Computer Lab 3, IT Block</p>
-                    <p><strong>Fee:</strong> ₹500 (includes certificate)</p>
+                    <p><strong>Fee:</strong> Rs 500 (includes certificate)</p>
                     <p><strong>Prerequisites:</strong> Basic programming knowledge</p>
                     <p><strong>Contact:</strong> Club Technical Head</p>
+                    <button class="success-btn register-btn" type="button">Register Now</button>
+<button class="leave-btn" type="button">Leave</button>
                 </div>
             </div>
             
@@ -422,6 +463,8 @@
                     <p><strong>Registration:</strong> Required (Limited slots)</p>
                     <p><strong>Bring:</strong> Your portfolio (digital or physical)</p>
                     <p><strong>Contact:</strong> Portfolio Coordinator</p>
+                    <button class="success-btn register-btn" type="button">Register Now</button>
+<button class="leave-btn" type="button">Leave</button>
                 </div>
             </div>
         </div>
@@ -494,5 +537,38 @@
         <p>Kongu Engineering College | Perundurai, Erode - 638060, Tamil Nadu</p>
         <p class="copyright">© 2026 Kongu Clubs Events Portal</p>
     </div>
-</body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.register-btn').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const card = btn.closest('.event-details');
+                    if (!card) return;
+                    btn.textContent = 'Registered';
+                    btn.disabled = true;
+                    btn.classList.add('registered');
+                    const leave = card.querySelector('.leave-btn');
+                    if (leave) { /* visible by default */ }
+                });
+            });
+
+            document.querySelectorAll('.leave-btn').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const card = btn.closest('.event-details');
+                    if (!card) return;
+                    const reg = card.querySelector('.register-btn');
+                    if (reg) {
+                        reg.textContent = 'Register Now';
+                        reg.disabled = false;
+                        reg.classList.remove('registered');
+                    }
+                    /* leave stays visible */
+                });
+            });
+        });
+    </script></body>
 </html>
+
+
+
+
+

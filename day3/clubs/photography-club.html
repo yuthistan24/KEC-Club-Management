@@ -1,7 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photography Club Events - Kongu Engineering College</title>
     <style>
@@ -183,15 +186,73 @@
             background-color: #ffcc00;
             transform: translateY(-3px);
         }
-    </style>
+            .success-btn {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .success-btn:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        .leave-btn {
+            display: inline-block;
+            background-color: #dc3545;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-left: 10px;
+        }
+
+        .leave-btn:hover {
+            background-color: #c82333;
+            transform: translateY(-2px);
+        }    </style>
 </head>
 <body>
     <div class="header">
-        <button class="back-btn" onclick="window.history.back()">← Back to Clubs</button>
+        <button class="back-btn" onclick="window.history.back()">&larr; Back to Clubs</button>
         <h1>Kongu Engineering College</h1>
         <p>Clubs Events Portal</p>
     </div>
-    
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="p-1.jpg" alt="Photography Club Event 1" class="d-block w-100" height="400px" width ="25%">
+            </div>
+            <div class="carousel-item">
+                <img src="p-2.jpg" alt="Photography Club Event 2" class="d-block w-100" height = "400px" width ="25%">
+            </div>
+            
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
     <div class="club-header">
         <h1 class="club-title">Photography Club</h1>
         <p class="club-description">The Photography Club of Kongu Engineering College nurtures creative vision and visual storytelling skills among students. It provides a platform for aspiring photographers to explore different styles of photography, capture meaningful moments, and express their perspectives through images. The club organizes various activities throughout the year, including photo walks, competitions, workshops, exhibitions, and coverage of campus events, encouraging students to learn, collaborate, and showcase their talent</p>
@@ -203,26 +264,23 @@
             <div class="info-grid">
                 <div class="info-item">
                     <h4>Faculty Coordinator</h4>
-                    <p>Dr. R. Kumar - 9867538XXX</p>
-                    <p>Department of English </p>
-                    <p>Email: rkumar.eng@kongu.edu</p>
+                    <p>Dr. L. Joseph - 9876531XXX</p>
+                    <p>Department of English</p>
+                    <p>Email: ljoseph.eng@kongu.edu</p>
                 </div>
                 
                 <div class="info-item">
                     <h4>Student Coordinator</h4>
-                    <p>Arjun Sharma (President) - 9087543XXX</p>
-                    <p>Computer Science and Engineering</p>
-                    <p>Email: arjunsharma.23cse@kongu.edu</p>
+                    <p>Manish K (President) - 9087132XXX</p>
+                    <p>Electronics and Communication Engineering</p>
+                    <p>Email: manishk.23ece@kongu.edu</p>
                 </div>
                 <div class = "info-item">
                     <h4>Student Coordinator</h4>
-                    <p>Priya Patel (Secretary) - 6789345XXX</p>
-                    <p>Electronics and Communication Engineering</p>
-                    <p>priyapatel.23ece@kongu.edu</p>
+                    <p>Swetha T (Secretary) - 6789333XXX</p>
+                    <p>Information Technology</p>
+                    <p>swethat.23it@kongu.edu</p>
                 </div>
-               
-                
-               
             </div>
         </div>
     
@@ -231,38 +289,38 @@
         
         <div class="events-grid">
             <div class="event-card">
-                <h3 class="event-title">College Band Competition 2026</h3>
-                <div class="event-date">October 15, 2026 | 4:00 PM - 8:00 PM</div>
-                <p class="event-description">Annual inter-department band competition showcasing the best musical talents of KEC. Open to all students with bands.</p>
+                <h3 class="event-title">Golden Hour Campus Walk</h3>
+                <div class="event-date">March 18, 2026 | 5:30 PM - 7:00 PM</div>
+                <p class="event-description">Evening photo walk focusing on natural light, composition, and campus architecture.</p>
                 <div class="event-details">
-                    <p><strong>Venue:</strong> Open Air Auditorium</p>
-                    <p><strong>Registration Fee:</strong> ₹500 per team</p>
-                    <p><strong>Last Date to Register:</strong> October 10, 2026</p>
-                    <p><strong>Contact:</strong> Prof. R. Kumar (9876543210)</p>
+                    <p><strong>Meet Point:</strong> Library Entrance</p>
+                    <p><strong>Bring:</strong> Any camera or phone</p>
+                    <button class="success-btn register-btn" type="button">Register Now</button>
+<button class="leave-btn" type="button">Leave</button>
                 </div>
             </div>
             
             <div class="event-card">
-                <h3 class="event-title">Western Music Workshop</h3>
-                <div class="event-date">October 28, 2026 | 10:00 AM - 4:00 PM</div>
-                <p class="event-description">Learn guitar, keyboard, and drums from professional musicians. Suitable for beginners and intermediate players.</p>
+                <h3 class="event-title">Portrait Lighting Workshop</h3>
+                <div class="event-date">April 9, 2026 | 2:00 PM - 5:00 PM</div>
+                <p class="event-description">Hands-on session on natural and artificial lighting for portraits.</p>
                 <div class="event-details">
-                    <p><strong>Venue:</strong> Music Room, Cultural Block</p>
-                    <p><strong>Registration Fee:</strong> ₹200 (includes lunch)</p>
-                    <p><strong>Instruments Provided:</strong> Yes</p>
-                    <p><strong>Contact:</strong> Music Club Secretary</p>
+                    <p><strong>Venue:</strong> Media Lab</p>
+                    <p><strong>Equipment:</strong> Studio lights provided</p>
+                    <button class="success-btn register-btn" type="button">Register Now</button>
+<button class="leave-btn" type="button">Leave</button>
                 </div>
             </div>
             
             <div class="event-card">
-                <h3 class="event-title">Annual Music Festival</h3>
-                <div class="event-date">November 20, 2026 | 6:00 PM - 10:00 PM</div>
-                <p class="event-description">The grand annual music festival featuring performances by college bands, solo artists, and guest performances.</p>
+                <h3 class="event-title">Photojournalism Field Trip</h3>
+                <div class="event-date">May 1, 2026 | 8:00 AM - 4:00 PM</div>
+                <p class="event-description">Capture real-world stories and build a narrative photo essay.</p>
                 <div class="event-details">
-                    <p><strong>Venue:</strong> Main Auditorium</p>
-                    <p><strong>Entry:</strong> Free for all students</p>
-                    <p><strong>Guest Performance:</strong> Local Band "The Echoes"</p>
-                    <p><strong>Contact:</strong> Cultural Coordinator</p>
+                    <p><strong>Location:</strong> Erode City Center</p>
+                    <p><strong>Seats:</strong> 30</p>
+                    <button class="success-btn register-btn" type="button">Register Now</button>
+<button class="leave-btn" type="button">Leave</button>
                 </div>
             </div>
         </div>
@@ -271,15 +329,15 @@
         
         <div class="events-grid">
             <div class="event-card">
-                <h3 class="event-title">Freshers' Welcome Jam</h3>
-                <div class="event-date">August 10, 2026 | 5:00 PM - 7:00 PM</div>
-                <p class="event-description">Informal music session to welcome first year students and introduce them to the music club activities.</p>
+                <h3 class="event-title">Monochrome Challenge</h3>
+                <div class="event-date">November 22, 2025 | All Day</div>
+                <p class="event-description">Theme-based challenge focusing on black-and-white storytelling.</p>
             </div>
             
             <div class="event-card">
-                <h3 class="event-title">Karaoke Night</h3>
-                <div class="event-date">September 5, 2026 | 6:00 PM - 9:00 PM</div>
-                <p class="event-description">Fun karaoke session where students showcased their singing talents in a non-competitive environment.</p>
+                <h3 class="event-title">Macro Photography Week</h3>
+                <div class="event-date">January 8-12, 2026 | 4:00 PM - 6:00 PM</div>
+                <p class="event-description">Daily sessions on capturing fine details of nature and objects.</p>
             </div>
         </div>
         
@@ -290,5 +348,39 @@
         <p>Kongu Engineering College | Perundurai, Erode - 638060, Tamil Nadu</p>
         <p class="copyright">© 2026 Kongu Clubs Events Portal</p>
     </div>
-</body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.register-btn').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const card = btn.closest('.event-details');
+                    if (!card) return;
+                    btn.textContent = 'Registered';
+                    btn.disabled = true;
+                    btn.classList.add('registered');
+                    const leave = card.querySelector('.leave-btn');
+                    if (leave) { leave.style.display = 'inline-block'; }
+                });
+            });
+
+            document.querySelectorAll('.leave-btn').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const card = btn.closest('.event-details');
+                    if (!card) return;
+                    const reg = card.querySelector('.register-btn');
+                    if (reg) {
+                        reg.textContent = 'Register Now';
+                        reg.disabled = false;
+                        reg.classList.remove('registered');
+                    }
+                });
+            });
+        });
+    </script></body>
 </html>
+
+
+
+
+
+
+

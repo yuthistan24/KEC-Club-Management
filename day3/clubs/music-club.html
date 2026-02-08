@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -184,11 +184,46 @@
             background-color: #ffcc00;
             transform: translateY(-3px);
         }
-    </style>
+            .success-btn {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .success-btn:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        .leave-btn {
+            display: inline-block;
+            background-color: #dc3545;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-left: 10px;
+        }
+
+        .leave-btn:hover {
+            background-color: #c82333;
+            transform: translateY(-2px);
+        }    </style>
 </head>
 <body>
     <div class="header">
-        <button class="back-btn" onclick="window.history.back()">← Back to Clubs</button>
+        <button class="back-btn" onclick="window.history.back()">&larr; Back to Clubs</button>
         <img src="../kec.jpg" alt="Kongu Engineering College" class="college-logo" width="50%" height="250px">
     </div>
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
@@ -262,10 +297,11 @@
                 <p class="event-description">Annual inter-department band competition showcasing the best musical talents of KEC. Open to all students with bands.</p>
                 <div class="event-details">
                     <p><strong>Venue:</strong> Open Air Auditorium</p>
-                    <p><strong>Registration Fee:</strong> ₹500 per team</p>
+                    <p><strong>Registration Fee:</strong> Rs 500 per team</p>
                     <p><strong>Last Date to Register:</strong> October 10, 2026</p>
                     <p><strong>Contact:</strong> Prof. R. Kumar (9876543210)</p>
-                    <button class = "success-btn" onclick="location.href='https://forms.gle/collegeband2026'">Register Now</button>
+                    <button class="success-btn register-btn" type="button">Register Now</button>
+<button class="leave-btn" type="button">Leave</button>
                 </div>
             </div>
             
@@ -275,10 +311,11 @@
                 <p class="event-description">Learn guitar, keyboard, and drums from professional musicians. Suitable for beginners and intermediate players.</p>
                 <div class="event-details">
                     <p><strong>Venue:</strong> Music Room, Cultural Block</p>
-                    <p><strong>Registration Fee:</strong> ₹200 (includes lunch)</p>
+                    <p><strong>Registration Fee:</strong> Rs 200 (includes lunch)</p>
                     <p><strong>Instruments Provided:</strong> Yes</p>
                     <p><strong>Contact:</strong> Music Club Secretary</p>
-                    <button class = "success-btn" onclick="location.href='https://forms.gle/westernworkshop2026'">Register Now</button>
+                    <button class="success-btn register-btn" type="button">Register Now</button>
+<button class="leave-btn" type="button">Leave</button>
                 </div>
             </div>
             
@@ -291,6 +328,8 @@
                     <p><strong>Entry:</strong> Free for all students</p>
                     <p><strong>Guest Performance:</strong> Local Band "The Echoes"</p>
                     <p><strong>Contact:</strong> Cultural Coordinator</p>
+                    <button class="success-btn register-btn" type="button">Register Now</button>
+<button class="leave-btn" type="button">Leave</button>
                 </div>
             </div>
         </div>
@@ -318,7 +357,41 @@
         <p>Kongu Engineering College | Perundurai, Erode - 638060, Tamil Nadu</p>
         <p class="copyright">© 2026 Kongu Clubs Events Portal</p>
     </div>
-</body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.register-btn').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const card = btn.closest('.event-details');
+                    if (!card) return;
+                    btn.textContent = 'Registered';
+                    btn.disabled = true;
+                    btn.classList.add('registered');
+                    const leave = card.querySelector('.leave-btn');
+                    if (leave) { leave.style.display = 'inline-block'; }
+                });
+            });
+
+            document.querySelectorAll('.leave-btn').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const card = btn.closest('.event-details');
+                    if (!card) return;
+                    const reg = card.querySelector('.register-btn');
+                    if (reg) {
+                        reg.textContent = 'Register Now';
+                        reg.disabled = false;
+                        reg.classList.remove('registered');
+                    }
+                    
+                });
+            });
+        });
+    </script></body>
 </html>
+
+
+
+
+
+
 
 
