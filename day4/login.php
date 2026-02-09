@@ -245,7 +245,9 @@
             }
         }
     </style>
-    <?php
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <?php
         $host= 'localhost';
         $username= 'root';  
         $password= '';
@@ -255,13 +257,61 @@
             die("Connection failed: " . mysqli_connect_error());
         }
         else{
-            
+            $logged = 0;
+            $invalid = 0;
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+                
+                $sql = "SELECT * FROM students WHERE email='$email' AND password='$password'";
+                $result = mysqli_query($conn, $sql);
+                
+                if (mysqli_num_rows($result) == 1) {
+                    $logged = 1;
+                    $_SESSION['email'] = $email;
+                } else {
+                    $invalid = 1;
+                    echo "<script>alert('Invalid email or password. Please try again.');</script>";
+                }
+            }
         }
-        ?>
+?>
+        <script>
+function formValidation() {
+  let x = document.forms["loginForm"]["email"].value;
+  if (x == "") {
+    alert("Fill in the email field");
+    return false;
+  }
+}
+function newFunction(){
+  document.getElementById("loginForm").reset();
+}
+</script>
+
 </head>
 <body>
+    <?php
+if($invalid){
+  echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Error</strong> Invalid Credentials.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>';
+}
+  ?>
+
+
+<?php
+if($logged){
+  echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Congrats</strong> You are successfully Logged In.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>';
+}
+  ?>
+
     <div class="header">
-        <button class="back-btn" onclick="window.location.href='index.html'">← Back to Home</button>
+        <button class="back-btn" onclick="window.location.href='index.php'">← Back to Home</button>
         <h1>Kongu Engineering College</h1>
         <p>Clubs Events Portal - Student Login</p>
     </div>
@@ -281,7 +331,7 @@
                 </ul>
             </div>
             
-            <form id="loginForm">
+            <form id="loginForm" action = "login.php" method = "post" onsubmit="return formValidation()">
                 <div class="form-group">
                     <label for="email">College Email or Roll Number</label>
                     <input type="text" id="email" name="email" required placeholder="username@kongu.edu or 25CSE001">
@@ -313,7 +363,7 @@
             </div>
             
             <div class="signup-link">
-                Don't have an account? <a href="signup.html">Sign up here</a>
+                Don't have an account? <a href="signup.php">Sign up here</a>
             </div>
         </div>
     </div>

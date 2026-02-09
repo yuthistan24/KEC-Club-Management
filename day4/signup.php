@@ -222,6 +222,7 @@
             die("Connection failed: " . mysqli_connect_error());
         }
         else{
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if(isset($_POST['signup'])){
                 $firstName = $_POST['firstName'];
                 $lastName = $_POST['lastName'];
@@ -230,8 +231,22 @@
                 $mobile = $_POST['mobile'];
                 $department = $_POST['department'];
                 $year = $_POST['year'];
+                $password = $_POST['password'];
+                $confirmPassword = $_POST['confirmPassword'];
+                if($password != $confirmPassword){
+                    echo "<script>alert('Passwords do not match. Please try again.');</script>";
+                    die();
+                }
 
-                $sql = "INSERT INTO students (FirstName, LastName, RollNumber, Email, Mobile, Department, Year) VALUES ('$firstName', '$lastName', '$rollNumber', '$email', '$mobile', '$department', '$year')";
+                $sql = "SELECT * FROM students WHERE Email='$email'";
+                $result = mysqli_query($conn, $sql);
+                if (mysqli_num_rows($result) > 0) {
+                    echo "<script>alert('Email already registered. Please use a different email.');</script>";
+                    $userexists = 1;
+                    
+                }
+                else{
+                $sql = "INSERT INTO students (FirstName, LastName, RollNumber, Email, Mobile, Department, Year, Password) VALUES ('$firstName', '$lastName', '$rollNumber', '$email', '$mobile', '$department', '$year', '$password')";
 
                 if (mysqli_query($conn, $sql)) {
                     echo "<script>alert('Registration successful!');</script>";
@@ -240,11 +255,14 @@
                 }
             }
         }
+            }
+            mysqli_close($conn);
+            }
     ?>
 </head>
 <body>
     <div class="header">
-        <button class="back-btn" onclick="window.location.href='index.html'">← Back to Home</button>
+        <button class="back-btn" onclick="window.location.href='index.php'">← Back to Home</button>
         <h1>Kongu Engineering College</h1>
         <p>Clubs Events Portal - Student Registration</p>
     </div>
@@ -325,35 +343,11 @@
                     <label for="confirmPassword">Confirm Password *</label>
                     <input type="password" id="confirmPassword" name="confirmPassword" required>
                 </div>
-                
-                <div class="form-group">
-                    <label for="interests">Club Interests (Optional)</label>
-                    <select id="interests" name="interests" multiple style="height: 100px;">
-                        <option value="music">Cultural & Music Club</option>
-                        <option value="freelance">Freelancers Club</option>
-                        <option value="maths">Mathematics Club</option>
-                        <option value="gender">Gender Equality Club</option>
-                        <option value="eprc">English Proficiency Club</option>
-                        <option value="innovation">Innovation & Entrepreneurship Club</option>
-                        <option value="selfdev">Self Development Club</option>
-                        <option value="rotaract">Rotaract Club</option>
-                        <option value="redribbon">Red Ribbon Club</option>
-                        <option value="coding">Coding Forum</option>
-                        <option value="creative">Ravi Varma Creative Club</option>
-                        <option value="photography">Photography & Design Club</option>
-                        <option value="yoga">Yoga and Meditation Club</option>
-                        <option value="women">Women Development Cell</option>
-                        <option value="mobile">Mobile App Development Cell</option>
-                        <option value="robotics">Robotics Club</option>
-                    </select>
-                    <div class="password-requirements">Hold Ctrl (or Cmd on Mac) to select multiple clubs</div>
-                </div>
-                
                 <button type="submit" name="signup" value="signup" class="submit-btn">Create Account</button>
             </form>
             
             <div class="login-link">
-                Already have an account? <a href="login.html">Login here</a>
+                Already have an account? <a href="login.php">Login here</a>
             </div>
         </div>
     </div>
