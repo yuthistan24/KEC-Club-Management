@@ -222,7 +222,6 @@
             die("Connection failed: " . mysqli_connect_error());
         }
         else{
-            echo "Connected successfully";
             if(isset($_POST['signup'])){
                 $firstName = $_POST['firstName'];
                 $lastName = $_POST['lastName'];
@@ -366,66 +365,5 @@
             <p class="copyright">© 2026 Kongu Clubs Events Portal. All clubs events in one place.</p>
         </div>
     </div>
-    
-    <script>
-        document.getElementById('signupForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Basic validation
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-            
-            if (password !== confirmPassword) {
-                alert('Passwords do not match!');
-                return;
-            }
-            
-            if (password.length < 8) {
-                alert('Password must be at least 8 characters long!');
-                return;
-            }
-            
-            // Save user data to localStorage (for demo purposes)
-            const userData = {
-                firstName: document.getElementById('firstName').value,
-                lastName: document.getElementById('lastName').value,
-                rollNumber: document.getElementById('rollNumber').value,
-                email: document.getElementById('email').value,
-                mobile: document.getElementById('mobile').value,
-                department: document.getElementById('department').value,
-                year: document.getElementById('year').value,
-                interests: Array.from(document.getElementById('interests').selectedOptions).map(option => option.value)
-            };
-            
-            // Store user data and set login status
-            localStorage.setItem('konguUser', JSON.stringify(userData));
-            localStorage.setItem('konguLoggedIn', 'true');
-            
-            // Show success message
-            alert('Registration successful! You can now register for events without filling your details again.');
-            
-            // Redirect to home page
-            window.location.href = 'index.html';
-        });
-        
-        // Pre-fill year based on roll number pattern
-        document.getElementById('rollNumber').addEventListener('blur', function() {
-            const rollNumber = this.value;
-            if (rollNumber && rollNumber.length >= 2) {
-                const yearCode = rollNumber.substring(0, 2);
-                const currentYear = new Date().getFullYear().toString().substring(2, 4);
-                
-                if (yearCode === currentYear) {
-                    document.getElementById('year').value = '1';
-                } else if (yearCode === (parseInt(currentYear) - 1).toString()) {
-                    document.getElementById('year').value = '2';
-                } else if (yearCode === (parseInt(currentYear) - 2).toString()) {
-                    document.getElementById('year').value = '3';
-                } else if (yearCode === (parseInt(currentYear) - 3).toString()) {
-                    document.getElementById('year').value = '4';
-                }
-            }
-        });
-    </script>
 </body>
 </html>
