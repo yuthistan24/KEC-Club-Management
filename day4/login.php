@@ -247,16 +247,9 @@
     </style>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <?php
-        $host= 'localhost';
-        $username= 'root';  
-        $password= '';
-        $db= 'kec_clubs';
-        $conn = mysqli_connect($host, $username, $password, $db);
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
-        else{
+  
+<?php
+include('server.php');
             $logged = 0;
             $invalid = 0;
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -274,7 +267,6 @@
                     echo "<script>alert('Invalid email or password. Please try again.');</script>";
                 }
             }
-        }
 ?>
         <script>
 function formValidation() {

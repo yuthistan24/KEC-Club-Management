@@ -213,15 +213,7 @@
         }
     </style>
     <?php
-        $host= 'localhost';
-        $username= 'root';  
-        $password= '';
-        $db= 'kec_clubs';
-        $conn = mysqli_connect($host, $username, $password, $db);
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
-        else{
+        include('server.php');
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if(isset($_POST['signup'])){
                 $firstName = $_POST['firstName'];
@@ -257,7 +249,6 @@
         }
             }
             mysqli_close($conn);
-            }
     ?>
 </head>
 <body>
